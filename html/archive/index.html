@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--googlefonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/archive.css">
+    
+    <title>アーカイブ - taskapp</title>
+</head>
+<body id="archive" data-design="body">
+ <!--header-->
+    <header data-frame="header" data-flex="header"  data-margin="header-margin-block">
+        <div class="header-logo-wrapper" data-flexChild="left" data-padding="header-l">
+            <h1 class="header-logo">taskapp</h1>
+        </div>
+        <nav class="global-nav" data-flexChild="right">
+            <ul class="global-ul" data-flex="header-ul" data-gap="gl-nav-gap">
+                <li data-frame="li-btn"><a href="../index.html">使い方ガイド</a></li>
+                <li data-frame="li-btn"><a href="../workspace/index.html">ワークスペース</a></li>
+                <li class="is-current" data-frame="li-btn"><a href="index.html">アーカイブ</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+        <div class="body-archive-wrapper">
+        <main class="archive-main" data-flex="main" data-frame="main">
+            
+            <section class="archive-section" data-frame="archive-section" data-flex="archive-section">
+                <h2 data-space="main-spacing">アーカイブ</h2>
+                <div class="archive-list" data-frame="archive-list" data-grid="archive-list">
+                    <!--jsで生成-->
+                </div>
+
+            </section>
+            
+        </main>
+        </div>
+<!--footer-->
+<div class="bottom-wrapper" data-frame="bottom-wrapper" data-flex="bottom-wrapper">
+    <footer data-frame="footer" data-flexChild="left" data-padding="footer-l">
+        <p class="copyright"><small>&copy; 2025 taskapp</small></p>
+    </footer>
+    
+</div>
+
+<script src="../assets/js/core/storage.js"></script>
+<script src="../assets/js/page/archive.js"></script>
+   
+</body>
+</html>

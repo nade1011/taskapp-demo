@@ -1,0 +1,437 @@
+@charset "UTF-8";
+/* =========================================
+   Workspace CSS
+
+/*---------------------------------------------
+    Design（視覚プロパティ）
+----------------------------------------------*/
+:root {
+
+    /*---- Fonts---- */
+    /*fontsize*/
+    --font-sz-nav-base: 1.5rem;
+    --font-sz-nav-listHead: 20px;
+    
+    
+    --font-sz-main-task-controls: 1rem;
+    --font-sz-main-task-toggle: 20px;
+    --font-sz-btn: 14px;
+    --font-sz-delete-btn: 12px;
+    
+
+    /*fontweight*/
+    --font-wt-sideNav-listHead: bold;
+   
+ 
+    /* Colors */
+    --color-bg-taskSec: #c9d2c849;
+    --color-bg-sideNav: #C6D0D6;
+
+
+    --color-btn-component-bg: #E1E3DD;
+    --color-btn-addTask-bg: #989998ad;
+  
+
+    
+  
+}
+
+[data-design="task-section"] {
+    background-color: var(--color-bg-taskSec);
+}
+[data-design="side-nav"] {
+    background-color: var(--color-bg-sideNav);
+}
+.section-list-head[data-design="nav-listHead"],
+.project-list-head[data-design="nav-listHead"] {
+    font-weight: var(--font-wt-sideNav-listHead);
+    font-size: var(--font-sz-nav-listHead);
+}
+/*btn*/
+.btn--add-section[data-design="btn-add-section"] {
+    background-color: var(--color-btn-component-bg);
+    font-size: var(--font-sz-btn);
+}
+[data-design="btn-export-reset"] {
+    background-color: var(--color-btn-component-bg);
+    font-size: var(--font-sz-btn);
+}
+.btn--add-task[data-design="btn-add-task"] {
+    background-color: var(--color-btn-addTask-bg);
+    
+}
+.btn--delete-task[data-design="btn-delete-task"] {
+    background-color: var(--color-btn-component-bg);
+    font-size: var(--font-sz-btn);
+}
+[data-design="btn-delete-project-section"] {
+    background-color: var(--color-btn-component-bg);
+    font-size: var(--font-sz-delete-btn);
+}
+.toggle[data-design="btn--status"] {
+    font-size: var(--font-sz-main-task-toggle);
+    
+}
+/* =========================================
+    Frame（Component / Box）
+========================================= */
+:root {
+    /*btn*/
+    
+    --radius-btn: 4px;
+    --radius-btn-addTask: 8px;
+    --radius-task-section: 8px;
+    --radius-btn-delete: 50%;
+    --padding-btn: 4px;
+    --padding-toggle-block: 8px;
+    --psdding-toggle-inline: 16px;
+}
+
+/*nav*/
+
+
+
+
+/*main*/
+
+[data-frame="main-area"] {
+    width: 100%;
+    max-width: 1020px;
+    
+}
+[data-frame="task-section"] {
+    width: 100%;
+    max-width: 1020px;
+    max-height: 520px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    
+}
+.task-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+[data-frame="task-memo-wrapper"] {
+    border: 1px solid #00000021;
+    padding: 2px;
+}
+/*btn*/
+[data-frame="btn"] {
+    padding: var(--padding-btn);
+    border-radius: var(--radius-btn);
+}
+.btn--add-section[data-frame="btn-add-section"] {
+    max-width: 160px;
+    width: 100%;
+    border-radius: var(--radius-btn);
+}
+[data-frame="btn-export-reset"] {
+    max-width: 100px;
+    width: 100%;
+    border-radius: var(--radius-btn);
+
+}
+.btn--add-task[data-frame="btn-add-task"] {
+    max-width: 160px;
+    width: 100%;
+    border-radius: var(--radius-btn-addTask);
+}
+.btn--delete-task[data-frame="btn-delete-task"] {
+    border-radius: var(--radius-btn-delete);
+    width: 32px;
+    padding: 4px;
+}
+[data-frame="btn-delete-project-section"] {
+    border-radius: var(--radius-btn-delete);
+    margin-right: 4px;
+    padding: 2px;
+    width: 22px;
+}
+.toggle[data-frame="btn--status"] {
+    border: 4px solid #000;
+    padding: var(--padding-toggle-block) var(--psdding-toggle-inline);
+    border-radius: var(--radius-btn);
+    
+    
+}
+
+
+
+/* =========================================
+   04: Layout（flex・grid）
+========================================= */
+
+/*body*/
+.body-workspace-wrapper[data-flex="body-workspace-wrapper"] {
+    display: flex;
+}
+
+/*side nav*/
+.site-nav-wrapper[data-flex="site-nav-wrapper"] {
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.nav-main-area[data-flex="nav-main-area"] {
+    display: flex;
+    flex-direction: column;
+}
+
+/*main*/
+
+
+.task-controls[data-grid="task-controls"] {
+    display: grid;
+    grid-template-columns: minmax(100px, 2fr) 64px minmax(100px, 2fr) 40px; 
+    align-items: center;
+    place-items: center;
+}
+
+
+.task-row[data-grid="task-row"] {
+    display: grid;
+    grid-template-columns: minmax(100px, 2fr) 64px minmax(100px, 2fr) 40px;
+    align-items: center;
+    place-items: center;
+    
+    
+}
+
+.task-col--status {
+    text-align: center;
+}
+
+
+/* =========================================
+   05: Space Utilities（余白ユーティリティ）
+   ├ Margin
+   └ Padding / Gap
+========================================= */
+:root {
+    --space-nav-lr: 1rem;
+    --space-nav-sp-lr: 2.5rem;
+    --space-nav-sec-l: 1.75rem;
+    --space-nav-padding-block: 6rem;
+    --space-nav-project-controls-bottom: 1rem;
+    --space-nav-section-list__add-bottom: 1rem;
+    --space-nav-project-header-bottom: 2rem;
+    --space-nav-btn--export-sp-bottom: 0;
+    --space-main-task-section: 36px 30px;
+    --space-main-task-list-bottom: 15px;
+    
+
+    --gap-nav-main-area: 1.75rem;
+    --gap-main-task-row: 56px;
+    
+}
+/*nav*/
+.site-nav-wrapper[data-space="site-nav-wrapper"] {
+   padding: var(--space-nav-padding-block) var(--space-nav-lr);
+}
+.btn--section-title[data-space="nav-sec-l"] {
+    padding-left: var(--space-nav-sec-l);
+}
+.nav-main-area[data-gap="nav-main-area"] {
+    gap: var(--gap-nav-main-area);
+}
+.project-controls[data-space="project-controls-bottom"] {
+    margin-bottom: var(--space-nav-project-controls-bottom);
+}
+.section-list__add[data-space="section-list__add-bottom"] {
+    margin-bottom: var(--space-nav-section-list__add-bottom);
+}
+.project-header[data-space="project-header-bottom"] {
+    margin-bottom: var(--space-nav-project-header-bottom);
+}
+.btn--export[data-spMarginBottom="btn--export"] {
+        margin-bottom: var(--space-nav-btn--export-sp-bottom);
+}
+
+/*main*/
+
+.task-section[data-space="task-section"] {
+    padding: var(--space-main-task-section);
+}
+.task-controls[data-space="task-list-bottom"],
+.task-row[data-space="task-list-bottom"] {
+    margin-bottom: var(--space-main-task-list-bottom);
+}
+.task-row[data-gap="task-row"] {
+    gap: var(--gap-main-task-row);
+}
+.task-controls[data-gap="task-row"] {
+    gap: var(--gap-main-task-row);
+}
+
+
+
+
+
+/* =========================================
+   07: State Utilities（JS連動）
+   ├ Active / Hidden / Editing
+   └ data-* や JSで付与される状態
+========================================= */
+
+/*taskbtn*/
+.task-item[data-status="todo"] .btn--status {
+  background: var(--color-bg-taskSec);
+}
+.task-item[data-status="doing"] .btn--status {
+  background:#D90F0F;
+  color:#fff;
+}
+.task-item[data-status="done"] .btn--status {
+  background:#06c26f;
+  
+  
+}
+
+
+/*input*/
+.is-hidden {
+    display: none;
+}
+
+
+
+
+/* =========================================
+        spレスポンシブ
+========================================= */
+@media (max-width: 810px) {
+    /*--------------------------------------------
+        design
+    ---------------------------------------------*/
+    :root {
+        --font-sz-add-task-btn: 14px;
+    }
+    .btn--add-task[data-design="btn-add-task"] {
+        font-size: var(--font-sz-add-task-btn);
+    }
+   
+
+    /* =========================================
+       Frame（Component / Box）
+    ========================================= */
+    [data-frame="main-area"] {
+        max-width: none;
+    
+    }
+    [data-frame="task-section"] {
+        background-color: var(--color-bg-taskSec);
+        max-width: none;
+        max-height: 370px;
+        
+    }
+    .site-nav-wrapper[data-frame="side-nav"] {
+        transform: translateX(-100%);
+         transition: transform .3s ease;
+   
+    }
+    
+      .btn--nav-toggle[data-frame="nav-toggle"] {
+        display: block;
+        z-index: 1000;
+        width: 32px;
+        cursor: pointer;
+        
+        background: #000000fd;
+        color: #fff;
+    }
+    /*---------------------------------------------
+        layout flex/grid
+    ----------------------------------------------*/
+   
+    .nav-main-area[data-flex="nav-main-area"] {
+    align-items: center;
+    }
+    
+
+
+    
+  
+    /*---------------------------------------------
+        Position（配置）
+    ----------------------------------------------*/
+    .site-nav-wrapper[data-sp-fixed="site-nav-wrapper"] {
+        position: fixed;
+        inset: 0;
+    
+    }
+    .btn--nav-toggle[data-sp-fixed="nav-toggle"] {
+        position: fixed;
+        top: 0;
+        left: 1rem;
+    }
+     /*---------------------------------------------
+        State（状態
+    ----------------------------------------------*/
+    .site-nav-wrapper[data-frame="side-nav"].is-open {
+     transform: translateX(0);
+    }
+
+    /*---------------------------------------------
+        Space（余白）
+    ----------------------------------------------*/
+    :root {
+        --margin-nav-toggle: 12px auto 4px;
+        --space-padding-l-toggle: 1rem;
+        --space-nav-btn--export-sp-bottom: 10px;
+    }
+    .btn--nav-toggle[data-margin="nav-toggle"] {
+        margin: var(--margin-nav-toggle);
+    }
+    .btn--export[data-spMarginBottom="btn--export"] {
+        margin-bottom: var(--space-nav-btn--export-sp-bottom);
+    }
+  
+
+}
+@media (max-width: 565px) {
+    :root {
+     --padding-toggle-block: 6px;
+    --psdding-toggle-inline: 10px;
+    }
+
+    .toggle[data-frame="task-toggle"] {
+    border: 4px solid #000;
+    padding: var(--padding-toggle-block) var(--psdding-toggle-inline);
+    
+    
+}
+    /* =========================================
+     Layout（flex・grid）
+    ========================================= */
+ 
+    /* =========================================
+        Space Utilities（余白ユーティリティ）
+    ========================================= */
+    :root {
+        
+        --gap-main-task-row: 16x;
+        --space-main-task-section: 16px 15px;
+    }
+        .task-section[data-space="task-section"] {
+        padding: var(--space-main-task-section);
+    }
+        .task-row[data-gap="task-row"] {
+        gap: var(--gap-main-task-row);
+    }
+    .task-controls[data-gap="task-row"] {
+         gap: var(--gap-main-task-row);
+    }
+
+
+
+}
+@media (min-width: 810px) {
+    .btn--nav-toggle[data-frame="nav-toggle"] {
+        display: none;
+    }
+}
+
+

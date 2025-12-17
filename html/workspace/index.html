@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--googlefonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/workspace.css">
+    <title>ワークスペース - taskapp</title>
+</head>
+<body id="workspace" data-design="body">
+ <!--header-->
+    <header data-frame="header" data-flex="header"  data-margin="header-margin-block">
+    <div class="header-logo-wrapper" data-flexChild="left" data-padding="header-l">
+        <h1 class="header-logo">taskapp</h1>
+    </div>
+            <nav class="global-nav" data-flexChild="right">
+                <ul class="global-ul" data-flex="header-ul" data-gap="gl-nav-gap">
+                    <li data-frame="li-btn"><a href="../index.html">使い方ガイド</a></li>
+                    <li class="is-current" data-frame="li-btn"><a href="index.html">ワークスペース</a></li>
+                    <li data-frame="li-btn"><a href="../archive/index.html">アーカイブ</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+<!--mainbody-->
+<div class="body-workspace-wrapper" data-flex="body-workspace-wrapper">
+<!--sadenav-->
+    <!--spnavtoggle-->
+     <button class="btn--nav-toggle" data-frame="nav-toggle" data-status="close" data-sp-fixed="nav-toggle" data-margin="nav-toggle">
+        <span class="toggle-open-icon">三</span>
+        <span class="toggle-close-icon is-hidden">×</span>
+    </button>
+   
+    
+    <nav class="site-nav-wrapper" data-frame="side-nav" data-flex="site-nav-wrapper" data-flexChild="left" data-space="site-nav-wrapper" data-sp-fixed="site-nav-wrapper" data-design="side-nav">
+    <div class="nav-main-area" data-flex="nav-main-area" data-gap="nav-main-area">
+    <!-- プロジェクトリスト -->
+        <ul class="project-list">
+            <!--jsで生成-->
+            <!-- セクションリスト -->
+            <ul class="section-list">
+                <!--jsで生成-->
+            </ul>
+        </ul>
+    </div>
+    </nav>
+<!--main right content-->
+    <main class="workspace-main" data-frame="main" data-flex="main" data-flexChild="right">
+    <div class="main-area" data-frame="main-area" data-flex="main-area">
+        
+        <!-- 選択中プロジェクトとセクションの表示 -->
+        <section class="workspace-header">
+            <h2 class="workspace-project-title" data-space="main-spacing">
+                <span class="js-project-title">プロジェクト名</span>
+                <input type="text" class="js-project-input is-hidden">
+            </h2>
+
+            <div class="workspace-section-status" data-space="main-spacing">
+                <div class="workspace-section-wrapper" data-space="main-spacing">
+                    <h3 class="workspace-section-title">セクション名</h3>
+                </div>
+            
+            </div>
+        </section>
+
+        <!-- タスクリスト -->
+        <section class="task-section" data-frame="task-section" data-space="task-section" data-design="task-section">
+
+            <!-- タスク追加とカラム見出し -->
+            <div class="task-controls" data-grid="task-controls" data-gap="task-row" data-space="task-list-bottom">
+            <button class="btn--add-task" data-frame="btn-add-task" data-design="btn-add-task">＋タスクを追加</button>
+            <span class="task-col task-col--status">状態</span>
+            <span class="task-col task-col--memo">メモ</span>
+            <span class="space-hidden"></span>
+            </div>
+
+            
+            <!-- タスクリスト -->
+            <ul class="task-list">
+            </ul>
+
+            <!-- ⬇️ ここに template を置く（task-list の真後ろ） -->
+            <template id="task-template">
+                <li class="task-item is-editing is-hidden" data-status="todo">
+                    <div class="task-row" data-grid="task-row" data-gap="task-row" data-space="task-list-bottom">
+                        <div class="task-wrapper" data-frame="task-memo-wrapper">
+                            <span class="task-title js-task-title">タスク名</span>
+
+                            <label class="sr-only"></label>
+                            <input type="text" class="task-input js-task-input is-hidden">
+                        </div>
+
+                        <button class="btn--status toggle" data-frame="btn--status" data-design="btn--status" aria-label="状態切替">未</button>
+
+                        <div class="task-memo-wrapper" data-frame="task-memo-wrapper">
+                            <span class="task-memo js-task-memo"></span>
+
+                            <input type="text" class="memo-input js-memo-input is-hidden">
+                        </div>
+
+                        <button class="btn--delete-task" data-frame="btn-delete-task" data-design="btn-delete-task" aria-label="タスク削除">×</button>
+                    </div>
+                </li>
+            </template>
+
+        </section>
+    </div>
+    </main>
+</div>
+<!--footer-->
+<div class="bottom-wrapper" data-frame="bottom-wrapper" data-flex="bottom-wrapper">
+<footer data-frame="footer" data-flexChild="left" data-padding="footer-l">
+        <p class="copyright"><small>&copy; 2025 taskapp</small></p>
+    </footer>
+
+</div>
+    
+    <script src="../assets/js/side-nav.js"></script>
+    <script src="../assets/js/core/storage.js"></script>
+    <script src="../assets/js/page/workspace.js"></script>
+   
+</body>
+</html>

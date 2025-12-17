@@ -1,0 +1,123 @@
+@charset "UTF-8";
+/*---------------------------------------------
+     Design（視覚プロパティ）
+----------------------------------------------*/
+:root {
+    /*-----font------*/
+    /*fontsize*/
+    --font-sz-section-guid-title: 1.25rem;
+    
+}
+[data-design="section-guid-h2"] {
+    font-size: var(--font-sz-section-guid-title);
+   
+}
+
+
+
+/*---------------------------------------------
+    Frame（Component / Box）
+----------------------------------------------*/
+:root {
+    --max-w-section-ws-textarea: 556px;
+    --max-w-section-achive-textarea: 563px;
+    --max-w-section-img: 1193px;
+}
+[data-frame="section-ws-textarea"] {
+    max-width: var(--max-w-section-ws-textarea);
+}
+[data-frame="section-achive-textarea"] {
+    max-width: var(--max-w-section-achive-textarea);
+}
+[data-frame="section-img"] {
+    max-width: var(--max-w-section-img);
+    object-fit: cover;
+    border: solid 1px rgba(85, 85, 85, 6.7);
+}
+[data-frame="section-img"] img {
+    width: 100%;
+  
+}
+
+/*---------------------------------------------
+    Layout（並べ方）flex / grid
+----------------------------------------------*/
+[data-flex="section-guid"] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+[data-flex="section-textarea-guid"] {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+/*---------------------------------------------
+     Space（余白）
+----------------------------------------------*/
+:root {
+    --space-padding-inline-main: 7.5rem;
+    --space-marginBtm-section-last: 20px;
+    --gap-section-guid: 2rem;
+    --gap-section-textarea-guid: 2rem;
+    --gap-main: 4rem;
+}
+[data-padding="main-inline"] {
+    padding-inline: var(--space-padding-inline-main);
+}
+[data-margin="section-last-margin-btm"] {
+    margin-bottom: var(--space-marginBtm-section-last);
+}
+[data-gap="section-guid"] {
+    gap: var(--gap-section-guid);
+}
+[data-gap="section-textarea-guid"] {
+    gap: var(--gap-section-textarea-guid);
+}
+[data-gap="main"] {
+    gap: var(--gap-main);
+}
+/*================================================
+        spレスポンシブ
+========================================= */
+@media (max-width: 810px) {
+
+    /*---------------------------------------------
+        Design（視覚プロパティ）
+    ----------------------------------------------*/
+
+
+
+
+    /*---------------------------------------------
+        Frame（Component / Box）
+    ----------------------------------------------*/
+
+
+
+    /*---------------------------------------------
+        Layout（並べ方）flex / grid
+    ----------------------------------------------*/
+    [data-flex="section-guid"] {
+        align-items: center;
+    }
+
+    /*---------------------------------------------
+        Space（余白）
+    ----------------------------------------------*/
+    :root {
+        --space-padding-inline-main: 1.5rem;
+        
+    }
+
+    [data-padding="main-inline"] {
+        padding-inline: var(--space-padding-inline-main);
+    }
+
+
+}
+
+

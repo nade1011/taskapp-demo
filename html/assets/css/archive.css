@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/*---------------------------------------------
+    Design（視覚プロパティ
+----------------------------------------------*/
+:root {
+    /*----- Fonts -----*/
+    /*fontsize*/
+    --font-sz-archive-project-title: 1.5rem;
+    /*fontweight*/
+    --font-wt-archive-project-title: bold;
+
+
+    /*----- Colors-------- */
+    --color-bg-archive-btn: #E1E3DD;
+    --color-bg-archive-card: #C6D0D6;
+}
+[data-design="archive-card"] {
+    background-color: var(--color-bg-archive-card);
+}
+[data-design="archive-btn"] {
+    background-color: var(--color-bg-archive-btn);
+}
+.project-title[data-design="project-title-archive"] {
+    font-size: var(--font-sz-archive-project-title);
+    font-weight: var(--font-wt-archive-project-title);
+}
+
+/*---------------------------------------------
+     Frame（Component / Box
+----------------------------------------------*/
+:root {
+    --maxwidth-archive-list: 75rem;
+    --maxwidth-archive-card: 18.75rem;
+    --maxheight-archive-card: 18.75rem;
+    --basewidth-frame: 100%;
+    --btn-padding-inline: 0.25rem;
+    --btn-padding-block: 0.25rem;
+    --btn-radius-archive: 4px;
+}
+[data-frame="archive-section"] {
+    width: var(--basewidth-frame);
+}
+[data-frame="archive-list"] {
+    width: var(--basewidth-frame); 
+    max-width: var(--maxwidth-archive-list);
+}
+[data-frame="archive-card"] {
+    width: var(--basewidth-frame);
+    max-width: var(--maxwidth-archive-card);
+    max-height : var(--maxheight-archive-card);
+
+}
+[data-frame="archive-btn"] {
+    border-radius: var(--btn-radius-archive);
+    padding-inline: var(--btn-padding-inline);
+    padding-block: var(--btn-padding-block);
+}
+[data-frame="archive-btn-wrapper"] {
+    width: var(--basewidth-frame);
+    max-width: var(--maxwidth-archive-list);
+}
+
+
+
+/*---------------------------------------------
+    Layout（並べ方）
+----------------------------------------------*/
+[data-flex="archive-section"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+[data-grid="archive-list"] {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    
+
+    
+}
+[data-flex="archive-card"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+[data-flex="archive-btn-wrapper"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*---------------------------------------------
+    Space（余白）
+----------------------------------------------*/
+:root {
+    --gap-archive-btn-wrapper: 2rem;
+    --gap-archive-card: 2rem;
+    --padBlock-archive-card: 1.25rem;
+    --mgBottom-archive-card: 1.5rem;
+}
+
+[data-gap="archive-card"] {
+    gap: var(--gap-archive-card);
+}
+[data-gap="archive-btn-wrapper"] {
+    gap: var(--gap-archive-btn-wrapper);
+}
+[data-padding="archive-card-block"] {
+    padding-block: var(--padBlock-archive-card);
+}
+[data-margin="archive-card-bottom"] {
+    margin-bottom: var(--mgBottom-archive-card);
+}
+
+
+
+/* =========================================
+        spレスポンシブ
+========================================= */
+@media (max-width: 810px) {
+
+    
+
+    /*------------------------------------
+        layout
+    --------------------------------------*/
+   [data-grid="archive-list"] {
+    
+    grid-template-columns: 1fr;
+    place-items: center;
+    
+    }
+
+    /*-----------------------------
+        Space（余白）
+    --------------------------------------*/
+    
+    /*---------------------------------------------
+        Position（配置）
+    ----------------------------------------------*/
+
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--googlefonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/guid.css">
+    
+    <title>使い方ガイド - taskapp</title>
+</head>
+<body id="guid" data-design="body">
+ <!--header-->
+   <header data-frame="header" data-flex="header"  data-margin="header-margin-block">
+    <div class="header-logo-wrapper" data-flexChild="left" data-padding="header-l">
+        <h1 class="header-logo">taskapp</h1>
+    </div>
+            <nav class="global-nav" data-flexChild="right">
+                <ul class="global-ul" data-flex="header-ul" data-gap="gl-nav-gap">
+                    <li class="is-current" data-frame="li-btn"><a href="index.html">使い方ガイド</a></li>
+                    <li data-frame="li-btn"><a href="workspace/index.html">ワークスペース</a></li>
+                    <li data-frame="li-btn"><a href="archive/index.html">アーカイブ</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+        <div class="body-guid-wrapper">
+            <main class="guid-main" data-flex="main" data-frame="main" data-padding="main-inline" data-gap="main">
+                <h2>使い方ガイド</h2>
+                <section class="section-ws-guid" data-flex="section-guid" data-gap="section-guid">
+                    <h2 data-design="section-guid-h2">ワークスペースの使い方</h2>
+                    <p class="section-img" data-frame="section-img"><img src="assets/images/section-ws-guid-img.jpg" alt="ワークスペースページの画像" width="1193" height="514"></p>
+                    <div class="section-text-area" data-frame="section-ws-textarea" data-flex="section-textarea-guid" data-gap="section-textarea-guid">
+                        <h3>１　エクスポート／初期化</h3>
+                        <p>現在の作業内容をアーカイブとして保存（エクスポート）できます。<br>エクスポート後、ワークスペースは初期状態に戻ります。<br>この操作によって、作業の区切りを明確にできます。<br></p>
+                        <h3>２　プロジェクト名</h3>
+                        <p>現在のプロジェクト名が表示されます。<br>プロジェクト名は編集可能で、作業内容に合わせて自由に変更できます。<br>アーカイブ時にも、この名前が識別情報として使われます。</p>
+                        <h3>３　セクション</h3>
+                        <p>タスクを分類するためのエリアです。<br>セクションは最大3つまで作成できます。<br>セクションを切り替えることで、作業の焦点を整理できます。</p>
+                        <h3>４　ワークスペース（作業エリア）</h3>
+                        <p>タスクを実際に操作・管理するメインエリアです。<br>タスク名やメモは編集可能です。
+                            <br>ステータスボタンを押すことで、タスクの状態を切り替えられます。<br>タスクは完了状態になっても自動では消えません。<br>不要になったタスクは、必要に応じて手動で削除します。</p>
+
+                        
+                    </div>
+                </section>
+                <section class="section-achive-guid" data-flex="section-guid" data-gap="section-guid" data-margin="section-last-margin-btm">
+                    <h2 data-design="section-guid-h2">アーカイブの使い方</h2>
+                    <p class="section-img" data-frame="section-img"><img src="assets/images/section-achive-guid-img.jpg" alt="アーカイブページの画像" width="1193" height="514"></p>
+                    <div class="section-text-area" data-frame="section-achive-textarea" data-flex="section-textarea-guid" data-gap="section-textarea-guid">
+                        <h3>１　アーカイブカード</h3>
+                        <p>エクスポートしたプロジェクトがカード形式で表示されます。<br>保存日時、総タスク数、未完了タスク数を確認できます。<br>最新のプロジェクトが上（または左）に表示されます。</p>
+                        <h3>２　インポート</h3>
+                        <p>選択したプロジェクトをワークスペースに復元します。<br>インポート時にはIDが再生成され、現在の作業と干渉しません。</p>
+                        <h3>３　削除</h3>
+                        <p>アーカイブされたプロジェクトを削除します。<br>削除したデータは元に戻せません。</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+        
+<!--footer-->
+<div class="bottom-wrapper" data-frame="bottom-wrapper" data-flex="bottom-wrapper">
+    <footer data-frame="footer" data-flexChild="left" data-padding="footer-l">
+        <p class="copyright"><small>&copy; 2025 taskapp</small></p>
+    </footer>
+    
+</div>
+    
+   
+   
+</body>
+</html>
