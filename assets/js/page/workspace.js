@@ -475,26 +475,45 @@ document.addEventListener("DOMContentLoaded", () => {
     exportCurrentProject();
     resetAppData();
       renderUI();
+  });
+
+
+
+  // ==============================
+// 編集確定 共通処理（UIを閉じる）
+// ==============================
+function handleEditConfirm(target) {
+  const titleInput = target.closest(".js-project-input");
+  const sectionInput = target.closest(".input--section-edit");
+  const taskTitleInput = target.closest(".js-task-input");
+  const memoInput = target.closest(".js-memo-input");
+
+  if (titleInput) saveProjectEdit(titleInput.closest(".project-list__item"));
+  if (sectionInput) saveEditSection(sectionInput.closest(".section-list__item"));
+  if (taskTitleInput) saveEditTitle(taskTitleInput.closest(".task-item"));
+  if (memoInput) saveEditMemo(memoInput.closest(".task-item"));
+}
+
+// ==============================
+// Enter 確定
+// ==============================
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Enter") return;
+  handleEditConfirm(e.target);
 });
 
+// ==============================
+// blur 確定（capture）
+// ==============================
+document.addEventListener("blur",(e) => {
+    if (!e.target.matches( ".js-project-input, .input--section-edit, .js-task-input, .js-memo-input"))
+       return;
 
+    handleEditConfirm(e.target);
+  },
+  true
+);
 
-  // ==============================
-  // Enter 確定
-  // ==============================
-  document.addEventListener("keydown", (e) => {
-    if (e.key !== "Enter") return;
-
-    const titleInput = e.target.closest(".js-project-input");
-    const sectionInput = e.target.closest(".input--section-edit");
-    const taskTitleInput = e.target.closest(".js-task-input");
-    const memoInput = e.target.closest(".js-memo-input");
-
-    if (titleInput) saveProjectEdit(titleInput.closest(".project-list__item"));
-    if (sectionInput) saveEditSection(sectionInput.closest(".section-list__item"));
-    if (taskTitleInput) saveEditTitle(taskTitleInput.closest(".task-item"));
-    if (memoInput) saveEditMemo(memoInput.closest(".task-item"));
-  });
 
   // ==============================
   // Input変更 → 自動保存
