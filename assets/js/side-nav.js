@@ -14,12 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
             btnNavToggle.setAttribute('data-status', 'open');
             toggleOpenIcon.classList.add('is-hidden');
             toggleCloseIcon.classList.remove('is-hidden');
+            document.body.classList.add('is-nav-open');
         }
         else {
             sideNav.classList.remove('is-open');
             btnNavToggle.setAttribute('data-status', 'close');
             toggleOpenIcon.classList.remove('is-hidden');
             toggleCloseIcon.classList.add('is-hidden');
+            document.body.classList.remove('is-nav-open');
         }
     });
 });

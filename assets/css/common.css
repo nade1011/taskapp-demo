@@ -68,7 +68,7 @@ body[data-design="body"] {
     --btn-padding-block: 4px;
 
     /*width&height*/
-    --minheight-main: 90vh;
+    --footer-height: clamp(60px, 10svh, 120px);
     --base-width-frame: 100%;
 }
 
@@ -82,13 +82,19 @@ body[data-design="body"] {
 
 [data-frame="main"] {
     width: var(--base-width-frame);
-    min-height: var(--minheight-main);
+    min-height: calc(100svh - var(--footer-height));
 }
 
 
 [data-frame="bottom-wrapper"] {
-    height: clamp(60px, 10vh, 120px);
+    height: var(--footer-height);
     width: var(--base-width-frame);
+}
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 

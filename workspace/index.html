@@ -15,7 +15,12 @@
 </head>
 <body id="workspace" data-design="body">
  <!--header-->
-    <header data-frame="header" data-flex="header"  data-margin="header-margin-block">
+    <header data-frame="header" data-flex="header"  data-margin="header-margin-block" data-sp-relative="header">
+         <!--spnavtoggle-->
+     <button class="btn--nav-toggle" data-frame="nav-toggle" data-status="close" data-sp-absolute="nav-toggle">
+        <span class="toggle-open-icon">三</span>
+        <span class="toggle-close-icon is-hidden">×</span>
+    </button>
     <div class="header-logo-wrapper" data-flexChild="left" data-padding="header-l">
         <h1 class="header-logo">taskapp</h1>
     </div>
@@ -31,11 +36,7 @@
 <!--mainbody-->
 <div class="body-workspace-wrapper" data-flex="body-workspace-wrapper">
 <!--sadenav-->
-    <!--spnavtoggle-->
-     <button class="btn--nav-toggle" data-frame="nav-toggle" data-status="close" data-sp-fixed="nav-toggle" data-margin="nav-toggle">
-        <span class="toggle-open-icon">三</span>
-        <span class="toggle-close-icon is-hidden">×</span>
-    </button>
+   
    
     
     <nav class="site-nav-wrapper" data-frame="side-nav" data-flex="site-nav-wrapper" data-flexChild="left" data-space="site-nav-wrapper" data-sp-fixed="site-nav-wrapper" data-design="side-nav">

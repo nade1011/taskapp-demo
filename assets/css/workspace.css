@@ -330,6 +330,8 @@
     .site-nav-wrapper[data-frame="side-nav"] {
         transform: translateX(-100%);
          transition: transform .3s ease;
+         height: 100svh;        
+         overflow: hidden;  
    
     }
     
@@ -357,15 +359,20 @@
     /*---------------------------------------------
         Position（配置）
     ----------------------------------------------*/
+    header[data-sp-relative="header"] {
+        position: relative;
+    }
     .site-nav-wrapper[data-sp-fixed="site-nav-wrapper"] {
         position: fixed;
         inset: 0;
     
     }
-    .btn--nav-toggle[data-sp-fixed="nav-toggle"] {
-        position: fixed;
-        top: 0;
+    .btn--nav-toggle[data-sp-absolute="nav-toggle"] {
+        position: absolute;
+        top: 1rem;
         left: 1rem;
+        align-self: start;
+        
     }
      /*---------------------------------------------
         State（状態
@@ -373,18 +380,19 @@
     .site-nav-wrapper[data-frame="side-nav"].is-open {
      transform: translateX(0);
     }
+    body.is-nav-open {
+        overflow: hidden;
+    }
 
     /*---------------------------------------------
         Space（余白）
     ----------------------------------------------*/
     :root {
-        --margin-nav-toggle: 12px auto 4px;
+        
         --space-padding-l-toggle: 1rem;
         --space-nav-btn--export-sp-bottom: 10px;
     }
-    .btn--nav-toggle[data-margin="nav-toggle"] {
-        margin: var(--margin-nav-toggle);
-    }
+   
     .btn--export[data-spMarginBottom="btn--export"] {
         margin-bottom: var(--space-nav-btn--export-sp-bottom);
     }
