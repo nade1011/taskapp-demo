@@ -26,12 +26,14 @@
     /* Colors */
     --color-bg-taskSec: #c9d2c849;
     --color-bg-sideNav: #C6D0D6;
-
+    --color-bg-nav-toggle: #000000fd;
+    
 
     --color-btn-component-bg: #E1E3DD;
     --color-btn-addTask-bg: #989998ad;
   
-
+    /*nav-toggle icon*/
+    --borderLine-color-nav-toggle-icon: #fff;
     
   
 }
@@ -72,6 +74,13 @@
     font-size: var(--font-sz-main-task-toggle);
     
 }
+[data-design="nav-toggle"] {
+    background-color: var(--color-bg-nav-toggle);
+    
+}
+[data-design="nav-toggle-icon"] {
+    background-color: var(--borderLine-color-nav-toggle-icon);
+}
 /* =========================================
     Frame（Component / Box）
 ========================================= */
@@ -84,15 +93,16 @@
     --radius-btn-delete: 50%;
     --padding-btn: 4px;
     --padding-toggle-block: 8px;
-    --psdding-toggle-inline: 16px;
+    --padding-toggle-inline: 16px;
+    --padding-btn-nav-toggle: 16px;
 }
 
-/*nav*/
 
 
 
 
-/*main*/
+
+
 
 [data-frame="main-area"] {
     width: 100%;
@@ -117,6 +127,7 @@
     border: 1px solid #00000021;
     padding: 2px;
 }
+
 /*btn*/
 [data-frame="btn"] {
     padding: var(--padding-btn);
@@ -151,13 +162,25 @@
 }
 .toggle[data-frame="btn--status"] {
     border: 4px solid #000;
-    padding: var(--padding-toggle-block) var(--psdding-toggle-inline);
+    padding: var(--padding-toggle-block) var(--padding-toggle-inline);
     border-radius: var(--radius-btn);
     
     
 }
+.btn--nav-toggle[data-frame="nav-toggle"] {
+        display: block;
+        z-index: 1000;
+        padding: var(--padding-btn-nav-toggle);
+        cursor: pointer;
+ }
 
-
+[data-frame="nav-toggle-icon"] {
+    display: block;
+    }
+.btn--project-title,
+.btn--section-title {
+    white-space: normal;
+}
 
 /* =========================================
    04: Layout（flex・grid）
@@ -178,6 +201,7 @@
 .nav-main-area[data-flex="nav-main-area"] {
     display: flex;
     flex-direction: column;
+    
 }
 
 /*main*/
@@ -266,7 +290,42 @@
     gap: var(--gap-main-task-row);
 }
 
+/* =========================================
+   06: Position Utilities（配置ユーティリティ）
+========================================= */
+.btn--nav-toggle[data-fixed="nav-toggle"] {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    
+}
+[data-relative="nav-toggle"] {
+    position: relative;
+}
 
+.bar-1[data-absolute="icon-bar"] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 11px;
+    height: 2px;
+    
+}
+.bar-2[data-absolute="icon-bar"] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 16px;
+    height: 2px;
+}
+.bar-3[data-absolute="icon-bar"] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 21px;
+    height: 2px;
+}
+   
 
 
 
@@ -296,7 +355,26 @@
     display: none;
 }
 
-
+/*nav-toggle*/
+.btn--nav-toggle[data-status="open"] .bar-1 {
+    transform: rotate(45deg); 
+    top: 16px;  
+}
+.btn--nav-toggle[data-status="open"] .bar-2 {
+    opacity: 0;
+}
+.btn--nav-toggle[data-status="open"] .bar-3 {
+    transform: rotate(-45deg);   
+    top: 16px;
+}
+/*--------------------------------------------
+    animation
+---------------------------------------------*/
+[data-animation="nav-toggle"] {
+     transition: transform 1s ease, opacity 2s ease;
+     will-change: transform;
+     transform-origin: center;
+}
 
 
 /* =========================================
@@ -335,22 +413,10 @@
    
     }
     
-      .btn--nav-toggle[data-frame="nav-toggle"] {
-        display: block;
-        z-index: 1000;
-        width: 32px;
-        cursor: pointer;
-        
-        background: #000000fd;
-        color: #fff;
-    }
-    /*---------------------------------------------
-        layout flex/grid
-    ----------------------------------------------*/
+      
    
-    .nav-main-area[data-flex="nav-main-area"] {
-    align-items: center;
-    }
+   
+  
     
 
 
@@ -359,20 +425,9 @@
     /*---------------------------------------------
         Position（配置）
     ----------------------------------------------*/
-    header[data-sp-relative="header"] {
-        position: relative;
-    }
     .site-nav-wrapper[data-sp-fixed="site-nav-wrapper"] {
         position: fixed;
         inset: 0;
-    
-    }
-    .btn--nav-toggle[data-sp-absolute="nav-toggle"] {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        align-self: start;
-        
     }
      /*---------------------------------------------
         State（状態
@@ -402,12 +457,12 @@
 @media (max-width: 565px) {
     :root {
      --padding-toggle-block: 6px;
-    --psdding-toggle-inline: 10px;
+    --padding-toggle-inline: 10px;
     }
 
     .toggle[data-frame="task-toggle"] {
     border: 4px solid #000;
-    padding: var(--padding-toggle-block) var(--psdding-toggle-inline);
+    padding: var(--padding-toggle-block) var(--padding-toggle-inline);
     
     
 }
@@ -420,8 +475,12 @@
     ========================================= */
     :root {
         
-        --gap-main-task-row: 16x;
+        --gap-main-task-row: 8px;
         --space-main-task-section: 16px 15px;
+        --space-main-header: 15px;
+    }
+    [data-padding="workspace-header"] {
+        padding-inline: var(--space-main-header);
     }
         .task-section[data-space="task-section"] {
         padding: var(--space-main-task-section);

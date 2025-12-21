@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.innerHTML = `
         <div class="project-header" data-space="project-header-bottom">
             <button class="btn--project-title js-project-title">${project.title}</button>
-            <input type="text" class="js-project-input is-hidden" value="${project.title}">
+            <input type="text" size="8" class="js-project-input is-hidden" value="${project.title}">
             <button class="btn--project-edit">✎</button>
         </div>
         <ul class="section-list"></ul>
@@ -127,9 +127,9 @@ document.addEventListener("DOMContentLoaded", () => {
       li.innerHTML = `
         <div class="section-header">
           <button class="btn--section-title">${section.title}</button>
+          <input type="text" size="8" class="input input--section-edit is-hidden" value="${section.title}">
           <button class="btn--section-edit">✎</button>
           <button class="btn--delete-section" data-frame="btn-delete-project-section" data-design="btn-delete-project-section">×</button>
-          <input type="text" class="input input--section-edit is-hidden" value="${section.title}">
         </div>
       `;
 
